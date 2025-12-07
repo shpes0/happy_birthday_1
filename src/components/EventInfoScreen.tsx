@@ -117,7 +117,7 @@ export function EventInfoScreen() {
                     Что ждёт:
                   </h3>
                 </div>
-                <ul className="space-y-4 pl-14">
+                <ul className="space-y-4">
                   <li className="flex items-start gap-3 text-xl">
                     <span className="text-2xl mt-1">🍽️</span>
                     <span 
