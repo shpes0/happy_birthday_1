@@ -205,7 +205,7 @@ export function GuestSurveyScreen() {
 
     // дополнительные напитки для "умеренно"/"повеселимся"
     { name: 'Яблочный сок', emoji: '🧃', gradient: 'from-amber-300 to-green-400' },
-    { name: 'Кола', emoji: '🥤', gradient: 'from-red-500 to-slate-700' },
+    { name: 'Кола', emoji: '🥤', gradient: 'from-red-500 to-slate-500' },
     { name: 'Тоник', emoji: '🥤', gradient: 'from-teal-400 to-cyan-500' }
   ];
 
