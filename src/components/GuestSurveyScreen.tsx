@@ -99,7 +99,9 @@ export function GuestSurveyScreen() {
     try {
       const res = await fetch(API_URL, {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headers: {
+          "Content-Type": "application/json",
+        },
         body: JSON.stringify({ guests }),
       });
 
@@ -116,7 +118,6 @@ export function GuestSurveyScreen() {
       alert("Ошибка соединения 😢");
     }
   };
-
 
   const foodCategories = [
     {
