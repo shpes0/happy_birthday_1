@@ -4,7 +4,7 @@ import path from 'path';
 
 export default defineConfig({
   plugins: [react()],
-  base: '/', // важно для кастомного домена nastya30.fun
+  base: '/', // для nastya30.fun и GitHub Pages
   resolve: {
     extensions: ['.js', '.jsx', '.ts', '.tsx', '.json'],
     alias: {
@@ -17,6 +17,8 @@ export default defineConfig({
       'next-themes@0.4.6': 'next-themes',
       'lucide-react@0.487.0': 'lucide-react',
       'input-otp@1.4.2': 'input-otp',
+
+      '@': path.resolve(__dirname, './src'),
 
       'figma:asset/ec96cdcd319575a63351b597ddb2a535dbe74cb4.png': path.resolve(
         __dirname,
@@ -107,18 +109,15 @@ export default defineConfig({
       '@radix-ui/react-aspect-ratio@1.1.2': '@radix-ui/react-aspect-ratio',
       '@radix-ui/react-alert-dialog@1.1.6': '@radix-ui/react-alert-dialog',
       '@radix-ui/react-accordion@1.2.3': '@radix-ui/react-accordion',
-
-      '@': path.resolve(__dirname, './src'),
     },
   },
   build: {
     target: 'esnext',
-    outDir: 'docs',    // сюда билд для GitHub Pages
-    emptyOutDir: true, // чистим docs перед билдом
+    outDir: 'docs',
+    emptyOutDir: true,
   },
   server: {
     port: 3000,
     open: true,
   },
 });
-``` :contentReference[oaicite:1]{index=1}  

@@ -36,7 +36,7 @@ export default function App() {
         <source src={videoSrc} type="video/mp4" />
       </video>
 
-      {/* Лёгкое затемнение поверх видео (если нужно можно ослабить/убрать) */}
+      {/* Лёгкое затемнение поверх видео */}
       <div className="fixed inset-0 bg-black/25 z-10" />
 
       {/* Контент поверх видео */}
@@ -49,4 +49,3 @@ export default function App() {
     </div>
   );
 }
-``` :contentReference[oaicite:0]{index=0} 
