@@ -1,6 +1,10 @@
 import { useState } from 'react';
 import menuImage from 'figma:asset/bb0c7e9ba42141fdf167fbc8d3add26eaae77ee2.png';
 
+// === BACKEND API URL ===
+const API_URL =
+  import.meta.env.VITE_API_URL ?? "http://localhost:4000/telegram";
+
 interface Guest {
   id: number;
   name: string;
