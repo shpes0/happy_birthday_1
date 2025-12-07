@@ -1,9 +1,7 @@
 import { useState } from 'react';
 import menuImage from 'figma:asset/bb0c7e9ba42141fdf167fbc8d3add26eaae77ee2.png';
 
-// === BACKEND API URL ===
-const API_URL =
-  import.meta.env.VITE_API_URL ?? "https://nastya30-backend.onrender.com/telegram";
+const API_URL = "https://nastya30-backend.onrender.com/telegram";
 
 interface Guest {
   id: number;
@@ -97,10 +95,28 @@ export function GuestSurveyScreen() {
     setGuests([...guests, newGuest]);
   };
 
-  const handleSubmit = () => {
-    console.log('Submitting guest data:', guests);
-    alert('Спасибо! Ваши предпочтения сохранены 🎉');
+  const handleSubmit = async () => {
+    try {
+      const res = await fetch(API_URL, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ guests }),
+      });
+
+      const data = await res.json();
+      console.log("Server response:", data);
+
+      if (res.ok) {
+        alert("Спасибо! Данные успешно отправлены 💌");
+      } else {
+        alert("Ошибка отправки 😢");
+      }
+    } catch (e) {
+      console.error("Submit error:", e);
+      alert("Ошибка соединения 😢");
+    }
   };
+
 
   const foodCategories = [
     {
